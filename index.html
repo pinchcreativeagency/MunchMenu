@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Munch Menu</title>
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/script.js" defer></script>
+    </head>
+    
+
+<style>
+
+
+
+</style>
+
+<body>
+
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">MUNCH MENU</a>
+    
+  <div id="myLinks">
+    <a href="#about">About</a>
+    <a href="#about">Reflection</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div style="padding-left:16px">
+</div>
+
+<!-- End smartphone / tablet look -->
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+    
+        
+    <body>
+        <div class="mobile-container">
+            <header>
+                <input type="text" id="search-term" />
+                <button id="search"><i class="fas fa-search"></i></button>
+            </header>
+            <div class="fav-container">
+                <h3>Favorites</h3>
+                <ul class="fav-meals" id="fav-meals"></ul>
+            </div>
+            <div class="meals" id="meals"></div>
+        </div>
+
+        <div class="popup-container hidden" id="meal-popup">
+            <div class="popup">
+                <button id="close-popup" class="close-popup">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="meal-info" id="meal-info"></div>
+            </div>
+        </div>
+    </body>
+    
+    
+ 
+    
+</html>
