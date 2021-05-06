@@ -11,40 +11,29 @@ getRandomMeal();
 fetchFavMeals();
 
  // On page load or refresh of page, a random meal will be provided to the user.
-
 async function getRandomMeal() {
     const resp = await fetch(
-        "https://www.themealdb.com/api/json/v1/1/random.php"
-    );
+        "https://www.themealdb.com/api/json/v1/1/random.php");
     const respData = await resp.json();
     const randomMeal = respData.meals[0];
-
     addMeal(randomMeal, true);
 }
 
  // Simply click the search tool will populate the list of meals of the Chosen API from themealdb
-
 async function getMealById(id) {
     const resp = await fetch(
-        "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
-    );
-
+        "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id);
     const respData = await resp.json();
     const meal = respData.meals[0];
-
     return meal;
 }
 
  // Entering in key words "chicken" will provide the user with a list of meals with the ingriendent of chicken in title or in ingriendients.
-
 async function getMealsBySearch(term) {
     const resp = await fetch(
-        "https://www.themealdb.com/api/json/v1/1/search.php?s=" + term
-    );
-
+        "https://www.themealdb.com/api/json/v1/1/search.php?s=" + term);
     const respData = await resp.json();
     const meals = respData.meals;
-
     return meals;
 }
 
