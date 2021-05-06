@@ -53,7 +53,7 @@ function addMeal(mealData, random = false) {
             ${
                 random
                     ? `
-            <span class="random"> Random Recipe </span>`
+            <span class="random"> Random Recipe for the Day </span>`
                     : ""
             }
             <img
@@ -112,7 +112,7 @@ function getMealsLS() {
 }
 
 async function fetchFavMeals() {
-    // clean the container
+    // This cleans the container
     favoriteContainer.innerHTML = "";
 
     const mealIds = getMealsLS();
@@ -155,7 +155,7 @@ function showMealInfo(mealData) {
     // clean it up
     mealInfoEl.innerHTML = "";
 
-    // update the Meal info
+    // updates the Meal info
     const mealEl = document.createElement("div");
 
     const ingredients = [];
@@ -217,3 +217,4 @@ searchBtn.addEventListener("click", async () => {
 popupCloseBtn.addEventListener("click", () => {
     mealPopup.classList.add("hidden");
 });
+

@@ -1,13 +1,10 @@
 
-.topnav #myLinks {
-  display: none;
-}
 
 .topnav a {
   color: white;
-  padding: 14px 16px;
+  padding: 13px 15px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
   display: block;
 }
 
@@ -20,7 +17,7 @@
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #dde;
   color: black;
 }
 
@@ -29,13 +26,19 @@
   color: white;
 }
 
+   .logo {
+       margin-left: 80px;
+        text-align: left;
+         display: block;
+       padding: inherit;
+      box-sizing: 25%;
+    }
 
 
-
-/* Style the navigation menu */
+/* Style the navigation menu / Dropdown */
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #334;
     align-items: center;
     justify-content: center;
 }
@@ -47,10 +50,11 @@
 
 /* Style navigation menu links */
 .topnav a {
-  color: white;
-  padding: 14px 16px;
+
+    color: white;
+  padding: 13px 14px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 15px;
   display: block;
 }
 
@@ -66,7 +70,7 @@
 
 /* Add a grey background color on mouse-over */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #ee1f52;
   color: black;
 }
 
@@ -78,13 +82,14 @@
 
 body {
     
-    background: -webkit-linear-gradient(to right, #ffffff, #ece9e6);
-    background: linear-gradient(to right, #ffffff, #ece9e6);
 
+    background: linear-gradient(to right, #ffffff, #ece9e6);
+ align-items: center;
     justify-content: center;
-    font-family: "Poppins", sans-serif;
+
+    font-family: sans-serif;
     margin: 0;
-    min-height: 100vh;
+    min-height: 99vh;
 }
 
 img {
@@ -93,16 +98,16 @@ img {
 
 .mobile-container {
     background-color: #fff;
-    box-shadow: 0 0 10px 2px #3333331a;
-    border-radius: 3px;
-       align-items: center;
+    box-shadow: 0 0 10px 1px #3333331a;
+    border-radius: 2px;
+    align-items: center;
     justify-content: center;
     overflow: hidden;
     width: 400px;
 }
 
 header {
-    display: flex;
+
     align-items: center;
     justify-content: center;
     padding: 1rem;
@@ -160,6 +165,7 @@ header button {
     font-size: 1.2rem;
 }
 
+/* When user hovers over a saved meal they have the ability to remove it from favourites by click the (x)*/
 .fav-meals li:hover .clear {
     opacity: 3;
 }
@@ -207,7 +213,7 @@ header button {
 
 .meal-header img {
     object-fit: cover;
-    height: 250px;
+    height: 260px;
     width: 100%;
 }
 
@@ -219,7 +225,7 @@ header button {
 }
 
 .meal-body h4 {
-    margin: 0;
+    margin: 200;
 }
 
 .meal-body .fav-btn {
@@ -230,7 +236,7 @@ header button {
     font-size: 1.2rem;
 }
 
-/* Loved meal will appear with primary colour (#ee1f52)*/
+/* Loved (Love Heart) meal will appear with primary colour (#ee1f52)*/
 
 .meal-body .fav-btn.active {
     color: #ee1f52;
@@ -248,13 +254,16 @@ header button {
     bottom: 0;
 }
 
+/* COntainer which holds info on recipe is hidden until magnifying glass is clicked by user.*/
+
 .popup-container.hidden {
     opacity: 0;
     pointer-events: none;
 }
 
+/* Background colour on the recipe once user clicks magnifying glass.*/
 .popup {
-    background-color: #fff;
+    background-color: #fff; ;
     border-radius: 5px;
     padding: 0 2rem;
     position: relative;
@@ -268,7 +277,7 @@ header button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -276,4 +285,5 @@ header button {
 
 .meal-info h1 {
     text-align: center;
+    text-justify: auto;
 }
