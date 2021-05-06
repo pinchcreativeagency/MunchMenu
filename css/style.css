@@ -17,7 +17,7 @@
 }
 
 .topnav a:hover {
-  background-color: #dde;
+
   color: black;
 }
 
@@ -26,12 +26,12 @@
   color: white;
 }
 
-   .logo {
-       margin-left: 80px;
-        text-align: left;
-         display: block;
-       padding: inherit;
-      box-sizing: 25%;
+.logo {
+      
+  text-align: center;
+  display: block;
+  padding: inherit;
+  box-sizing: 25%;
     }
 
 
@@ -68,7 +68,7 @@
   top: 0;
 }
 
-/* Add a grey background color on mouse-over */
+/* Add a grey background colour on mouse-over */
 .topnav a:hover {
   background-color: #ee1f52;
   color: black;
@@ -81,12 +81,10 @@
 }
 
 body {
-    
-
-    background: linear-gradient(to right, #ffffff, #ece9e6);
+position: center;
  align-items: center;
     justify-content: center;
-
+display: block;
     font-family: sans-serif;
     margin: 0;
     min-height: 99vh;
@@ -100,10 +98,10 @@ img {
     background-color: #fff;
     box-shadow: 0 0 10px 1px #3333331a;
     border-radius: 2px;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
     width: 400px;
+    position: center;
+    display: block;
 }
 
 header {
@@ -111,6 +109,7 @@ header {
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    position: center;
 }
 
 header input {
@@ -139,6 +138,8 @@ header button {
     text-align: center;
 }
 
+/* This is where loved meals will be saved. */
+
 .fav-meals {
     display: flex;
     flex-wrap: wrap;
@@ -146,6 +147,8 @@ header button {
     list-style-type: none;
     padding: 0;
 }
+
+/* The more meals added to favourite the larger the list will grow and expand */
 
 .fav-meals li {
     cursor:pointer;
@@ -224,9 +227,13 @@ header button {
     padding: 1rem;
 }
 
+/* Name of meal will display here */
+
 .meal-body h4 {
     margin: 200;
 }
+
+/* (Love Heart) button will appear unshaded until user clicks and activates the meal as being a favourite.*/
 
 .meal-body .fav-btn {
     border: none;
@@ -241,6 +248,8 @@ header button {
 .meal-body .fav-btn.active {
     color: #ee1f52;
 }
+
+/* Full description of meal and ingridients will appear */
 
 .popup-container {
     background-color: rgba(0, 0, 0, 0.5);
@@ -286,4 +295,14 @@ header button {
 .meal-info h1 {
     text-align: center;
     text-justify: auto;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: #334;
+  color: white;
+    height:auto;
 }

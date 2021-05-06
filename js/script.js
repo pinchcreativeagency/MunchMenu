@@ -1,5 +1,5 @@
 const mealsEl = document.getElementById("meals");
-const favoriteContainer = document.getElementById("fav-meals");
+const favouriteContainer = document.getElementById("fav-meals");
 const mealPopup = document.getElementById("meal-popup");
 const mealInfoEl = document.getElementById("meal-info");
 const popupCloseBtn = document.getElementById("close-popup");
@@ -9,6 +9,8 @@ const searchBtn = document.getElementById("search");
 
 getRandomMeal();
 fetchFavMeals();
+
+ // On page load or refresh of page, a random meal will be provided to the user.
 
 async function getRandomMeal() {
     const resp = await fetch(
@@ -20,6 +22,8 @@ async function getRandomMeal() {
     addMeal(randomMeal, true);
 }
 
+ // Simply click the search tool will populate the list of meals of the Chosen API from themealdb
+
 async function getMealById(id) {
     const resp = await fetch(
         "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
@@ -30,6 +34,8 @@ async function getMealById(id) {
 
     return meal;
 }
+
+ // Entering in key words "chicken" will provide the user with a list of meals with the ingriendent of chicken in title or in ingriendients.
 
 async function getMealsBySearch(term) {
     const resp = await fetch(
@@ -113,7 +119,7 @@ function getMealsLS() {
 
 async function fetchFavMeals() {
     // This cleans the container
-    favoriteContainer.innerHTML = "";
+    favouriteContainer.innerHTML = "";
 
     const mealIds = getMealsLS();
 
@@ -148,7 +154,7 @@ function addMealFav(mealData) {
         showMealInfo(mealData);
     });
 
-    favoriteContainer.appendChild(favMeal);
+    favouriteContainer.appendChild(favMeal);
 }
 
 function showMealInfo(mealData) {
