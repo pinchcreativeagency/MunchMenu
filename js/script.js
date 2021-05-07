@@ -3,14 +3,13 @@ const favouriteContainer = document.getElementById("fav-meals");
 const mealPopup = document.getElementById("meal-popup");
 const mealInfoEl = document.getElementById("meal-info");
 const popupCloseBtn = document.getElementById("close-popup");
-
 const searchTerm = document.getElementById("search-term");
 const searchBtn = document.getElementById("search");
 
 getRandomMeal();
 fetchFavMeals();
 
- // On page load or refresh of page, a random meal will be provided to the user.
+ // On page load or refresh of page, a random meal will be provided to the user. (The keyword async funstions below makes the function return a promise, with the keyword await before the functions makes it wait for a promise)
 async function getRandomMeal() {
     const resp = await fetch(
         "https://www.themealdb.com/api/json/v1/1/random.php");
@@ -19,7 +18,7 @@ async function getRandomMeal() {
     addMeal(randomMeal, true);
 }
 
- // Simply click the search tool will populate the list of meals of the Chosen API from themealdb
+ // Clicking the search tool will populate the list of meals of the Chosen API from themealdb
 async function getMealById(id) {
     const resp = await fetch(
         "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id);
@@ -37,9 +36,11 @@ async function getMealsBySearch(term) {
     return meals;
 }
 
+// The classList property returns the class name(s) of an element, as a DOMTokenList object. This is then displayed as the Random meal of the day.
 function addMeal(mealData, random = false) {
     console.log(mealData);
 
+    
     const meal = document.createElement("div");
     meal.classList.add("meal");
 
@@ -48,7 +49,7 @@ function addMeal(mealData, random = false) {
             ${
                 random
                     ? `
-            <span class="random"> Random Recipe for the Day </span>`
+            <span class="random"> Random Meal for the Day </span>`
                     : ""
             }
             <img
@@ -63,7 +64,7 @@ function addMeal(mealData, random = false) {
             </button>
         </div>
     `;
-
+// The querySelector() method returns the first element that matches wihtin the CSS
     const btn = meal.querySelector(".meal-body .fav-btn");
 
     btn.addEventListener("click", () => {
@@ -85,6 +86,8 @@ function addMeal(mealData, random = false) {
     mealsEl.appendChild(meal);
 }
 
+// The below function allows for the localStorage of an object. The key is fetched and attached. Took some time to understand that localStorage can only store strings. :(
+
 function addMealLS(mealId) {
     const mealIds = getMealsLS();
 
@@ -100,6 +103,8 @@ function removeMealLS(mealId) {
     );
 }
 
+// The parse performs a transformation on the resulting object before it is returned.
+
 function getMealsLS() {
     const mealIds = JSON.parse(localStorage.getItem("mealIds"));
 
@@ -107,7 +112,7 @@ function getMealsLS() {
 }
 
 async function fetchFavMeals() {
-    // This cleans the container
+    // This ended up actually clearing the container mobile container
     favouriteContainer.innerHTML = "";
 
     const mealIds = getMealsLS();
@@ -120,9 +125,14 @@ async function fetchFavMeals() {
     }
 }
 
+// This ended up actually clearing the container mobile container
+
 function addMealFav(mealData) {
     const favMeal = document.createElement("li");
 
+    
+// The innerHTML property below is using DOM allowed for reading and replacing everything within a given DOM element (HTML tag)
+    
     favMeal.innerHTML = `
         <img
             src="${mealData.strMealThumb}"
@@ -150,12 +160,13 @@ function showMealInfo(mealData) {
     // clean it up
     mealInfoEl.innerHTML = "";
 
-    // updates the Meal info
+    // The document. createElement() creates the HTML element specified by tagName and updates the Meal information
     const mealEl = document.createElement("div");
 
     const ingredients = [];
 
-    // get ingredients and measures
+    // The loop and iteration below gets ingredients and measurements to display in a list (https://stackoverflow.com/questions/49580528/how-to-filter-through-json-return-from-api-with-similar-prop) 
+    
     for (let i = 1; i <= 20; i++) {
         if (mealData["strIngredient" + i]) {
             ingredients.push(
@@ -195,8 +206,9 @@ function showMealInfo(mealData) {
     mealPopup.classList.remove("hidden");
 }
 
+ // This async function on pressing the search button will clear the search tab, cleans the container and will display meals by the getMealsBySearch (search)
 searchBtn.addEventListener("click", async () => {
-    // clean container
+   
     mealsEl.innerHTML = "";
 
     const search = searchTerm.value;

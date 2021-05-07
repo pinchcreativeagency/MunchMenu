@@ -263,14 +263,14 @@ header button {
     bottom: 0;
 }
 
-/* COntainer which holds info on recipe is hidden until magnifying glass is clicked by user.*/
+/* Container which holds info on meal is hidden until magnifying glass is clicked by user.*/
 
 .popup-container.hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-/* Background colour on the recipe once user clicks magnifying glass.*/
+/* Background colour on the meal once user clicks magnifying glass.*/
 .popup {
     background-color: #fff; ;
     border-radius: 5px;
@@ -296,7 +296,6 @@ header button {
     text-align: center;
     text-justify: auto;
 }
-
 
 
 footer {
